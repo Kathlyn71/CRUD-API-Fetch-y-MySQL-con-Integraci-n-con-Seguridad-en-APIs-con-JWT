@@ -1,0 +1,9 @@
+<?php
+
+define("JWT_USER_SECRET", "TU_USUARIO");
+
+define("JWT_CLAVE_SECRET", "TU_CLAVE");
+
+define("JWT_SECRET_KEY", "COLOQUE_AQUI_SU_CLAVE_SECRETA");
+
+?>

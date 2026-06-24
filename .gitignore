@@ -1,0 +1,11 @@
+# dependencias instaladas por composer
+/vendor/
+
+# archivos del sistema
+.DS_Store
+Thumbs.db
+
+# variables de entorno
+.env
+
+config/Config.php
