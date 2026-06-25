@@ -294,7 +294,8 @@ Conexion
 ↓
 MySQL
 
-Se implementó un enrutamiento centralizado mediante la instrucción:
+Se implementó un enrutamiento centralizado en el api/products.php 
+mediante la instrucción:
 
 ```bash
 switch($_SERVER["REQUEST_METHOD"])
@@ -309,6 +310,56 @@ Los métodos soportados son:
 | PUT    | Actualizar producto     |
 | DELETE | Eliminar producto       |
 
-Todos los servicios devuelven respuestas JSON con la estructura:
+Y Todos los servicios devuelven respuestas JSON
 
 ---
+
+# Seguridad con JWT
+
+El sistema implementa autenticación mediante JSON Web Token (JWT).
+
+El proceso funciona de la siguiente manera:
+
+El usuario inicia sesión desde la interfaz.
+login.php valida el usuario y la contraseña almacenada en la base de datos.
+La contraseña se verifica utilizando: password_verify()
+Si las credenciales son correctas, se genera un token JWT con: JWT::encode()
+El token se almacena en el localStorage
+Cada petición hacia la API se envía el token mediante: Authorization: Bearer TOKEN
+
+Antes de acceder a los servicios protegidos, seguridad.php verifica:
+Existencia del token.
+Firma del token.
+Tiempo de expiración.
+Integridad del contenido.
+
+Si el token es válido, el usuario puede acceder a los recursos de la API.
+
+---
+
+# Seguridad de Credenciales
+
+Las credenciales sensibles se almacenan en:
+
+```bash
+config/config.php
+```
+
+Este archivo contiene: el Usuario administrador, Contraseña del administrador y la 
+Clave secreta JWT.
+
+Por motivos de seguridad se proporciona una plantilla:
+
+```bash
+config/config.example.php
+```
+
+---
+
+# Conclusión
+
+El desarrollo de este proyecto permitió implementar una API REST segura utilizando PHP, MySQL y autenticación mediante JWT. Se aplicó una arquitectura organizada basada en controladores, modelos y clases de conexión, facilitando el mantenimiento y la escalabilidad del sistema.
+
+Además, se implementaron las operaciones CRUD completas para la gestión de productos, incorporando validaciones tanto en el cliente como en el servidor para garantizar la integridad de la información. La autenticación mediante JSON Web Token (JWT) añadió una capa adicional de seguridad, permitiendo que únicamente los usuarios autorizados accedan a los recursos protegidos de la API.
+
+Finalmente, el uso de herramientas como Bootstrap, SweetAlert2, Composer y Postman permitió desarrollar una aplicación con una interfaz amigable, una mejor experiencia de usuario y una estructura profesional acorde con las buenas prácticas de desarrollo web y seguridad informática.
