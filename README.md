@@ -143,7 +143,7 @@ password_hash(
 
 ---
 
-## ⚙ Instalación del proyecto
+## Instalación del proyecto
 
 ### 1. Clonar el repositorio
 
@@ -219,7 +219,7 @@ Las operaciones implementadas son:
 Permite registrar un nuevo producto enviando los siguientes datos: Código, Nombre del producto,
 Precio y Cantidad
 
-<img src="img1.png" alt="Mi imagen" width="200"/>
+<img src="imagenes/img1.png" alt="Mi imagen" width="800"/>
 
 Antes de guardar se realizan validaciones como: Campos obligatorios, El precio no puede ser negativo.
 La cantidad no puede ser negativa. No se permiten productos repetidos por código o nombre.
@@ -230,7 +230,8 @@ La cantidad no puede ser negativa. No se permiten productos repetidos por códig
 
 Permite: Buscar un producto por su código, obtener el listado completo de productos.
 
-<img src="img2.png" alt="Mi imagen" width="200"/>
+<img src="imagenes/img3.png" alt="Mi imagen" width="800"/>
+
 
 ---
 
@@ -240,9 +241,12 @@ Permite actualizar el Nombre del producto, Precio y Cantidad.
 
 Se validan nuevamente los datos antes de realizar la actualización.
 
-<img src="img3.png" alt="Mi imagen" width="200"/>
+Producto actualizado y se verifico en la base de datos, el producto
+lonchera se actualizo el precio
 
-<img src="img4.png" alt="Mi imagen" width="200"/>
+<img src="imagenes/img4.png" alt="Mi imagen" width="800"/>
+
+<img src="imagenes/img2.png" alt="Mi imagen" width="800"/>
 
 ---
 
@@ -251,7 +255,7 @@ Se validan nuevamente los datos antes de realizar la actualización.
 Permite eliminar un producto enviando únicamente el código del producto y se utiliza confirmación
 desde la interfaz mediante SweetAlert2.
 
-<img src="img5.png" alt="Mi imagen" width="200"/>
+<img src="imagenes/img5.png" alt="Mi imagen" width="800"/>
 
 ---
 
